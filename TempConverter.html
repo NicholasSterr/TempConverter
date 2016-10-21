@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temperature Converter</title>
+    <style type="text/css">
+        button{
+            color: #000000;
+            border-color: darkgray;
+            padding:7px;
+
+        }
+        input{
+            border-color: #000;
+        }
+        fieldset{border:transparent;
+
+        }
+        img {float: left;
+
+            }
+
+    </style>
+
+</head>
+<body>
+<h1>Temperature Converter:</h1>
+<label>Click one of the buttons below to begin:</label><img class="Img" src="Thermometer.jpg">
+<fieldset><input type="text" id="C" name="C" readonly>
+
+<label for="C">Degrees Celsius</label><br>
+
+<button id="CtoF" onclick="CalculateCtoF()">Convert Celsius to Fahrenheit</button><br></fieldset>
+
+<label id="equals">Equals:</label>
+
+<fieldset><input type="text" id="F" name="F" readonly>
+
+<label for="F">Degrees Fahrenheit</label><br>
+
+<button id="FtoC" onclick="CalculateFtoC()">Convert Fahrenheit to Celsius</button></fieldset>
+
+
+<script>
+try{
+    function CalculateCtoF() {
+        var Celsius = prompt('Enter Celsius');
+        var Fahrenheit;
+
+        if(Celsius >=0 || Celsius <= 0){ (Fahrenheit = Celsius * 1.8 + 32);
+            Celsius = parseFloat(Celsius).toFixed(2);
+            Fahrenheit = parseFloat(Fahrenheit).toFixed(2);
+
+        } else {isNaN(Celsius);
+            Celsius = 'Invalid Enter a #';
+            Fahrenheit = '';
+
+        }
+
+        document.getElementById("C").value = Celsius;
+        document.getElementById("F").value = Fahrenheit;
+
+    }//end function
+
+    function CalculateFtoC() {
+        var Fahrenheit = prompt('Enter Fahrenheit');
+        var Celsius;
+
+        if (Fahrenheit >= 0 || Fahrenheit <= 0) {
+            (Celsius = (Fahrenheit - 32) / 1.8);
+            Celsius = parseFloat(Celsius).toFixed(2);
+            Fahrenheit = parseFloat(Fahrenheit).toFixed(2);
+        }
+       
+        else {
+            isNaN(Fahrenheit);
+            Celsius = '';
+            Fahrenheit = 'Invalid Enter a #';
+
+        }
+        document.getElementById("C").value = Celsius;
+        document.getElementById("F").value = Fahrenheit;
+
+    }
+}
+
+</script>
+</body>
+</html>
